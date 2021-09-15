@@ -50,11 +50,11 @@ public class DevicePanel extends JFrame implements ActionListener{
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{324, 46, 178, 0};
 		gridBagLayout.rowHeights = new int[]{46, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{1.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		getContentPane().setLayout(gridBagLayout);
 		
-		lblLiveMidiPlay = new JLabel("Connect a midi device to play notes on..");
+		lblLiveMidiPlay = new JLabel("  Connect a midi device to play notes on..");
 		lblLiveMidiPlay.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 30));
 		GridBagConstraints gbc_lblLiveMidiPlay = new GridBagConstraints();
 		gbc_lblLiveMidiPlay.insets = new Insets(0, 0, 5, 5);
@@ -65,7 +65,7 @@ public class DevicePanel extends JFrame implements ActionListener{
 		titelFrame = new JLabel();
 		titelFrame.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		titelFrame.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 30));
-		titelFrame.setText("Choose youre device: ");
+		titelFrame.setText("  Choose youre device: ");
 		GridBagConstraints gbc_titelFrame = new GridBagConstraints();
 		gbc_titelFrame.anchor = GridBagConstraints.WEST;
 		gbc_titelFrame.insets = new Insets(0, 0, 5, 5);
@@ -85,7 +85,7 @@ public class DevicePanel extends JFrame implements ActionListener{
 		
 		connectBtn = new JButton();
 		connectBtn.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 30));
-		connectBtn.setText("ConnectS");
+		connectBtn.setText("Connect ");
 		connectBtn.addActionListener(this);
 		GridBagConstraints gbc_connectBtn = new GridBagConstraints();
 		gbc_connectBtn.insets = new Insets(0, 0, 5, 0);
@@ -102,12 +102,12 @@ public class DevicePanel extends JFrame implements ActionListener{
 		SimpleAttributeSet center = new SimpleAttributeSet();
 		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
 		doc.setParagraphAttributes(0, doc.getLength(), center, false);
-		txtpnC.setFont(new Font(Font.SERIF, Font.BOLD, 99));
-		txtpnC.setText("c");
+		txtpnC.setFont(new Font(Font.SERIF, Font.BOLD, 120));
+		txtpnC.setText("C#");
 		txtpnC.setBackground(Color.CYAN);
 		GridBagConstraints gbc_txtpnC = new GridBagConstraints();
+		gbc_txtpnC.gridwidth = 3;
 		gbc_txtpnC.insets = new Insets(0, 0, 0, 5);
-		gbc_txtpnC.fill = GridBagConstraints.BOTH;
 		gbc_txtpnC.gridx = 0;
 		gbc_txtpnC.gridy = 5;
 		getContentPane().add(txtpnC, gbc_txtpnC);
