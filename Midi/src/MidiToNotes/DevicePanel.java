@@ -35,6 +35,8 @@ public class DevicePanel extends JFrame implements ActionListener{
 	private Panel panel;
 	
 	DevicePanel(MidiDevice.Info infos[]){
+		this.setTitle("Play midi piano to notes on screen!");
+		
 		getContentPane().setBackground(Color.CYAN);
 		setMinimumSize(new Dimension(400, 400));
 		setAlwaysOnTop(true);
@@ -47,7 +49,7 @@ public class DevicePanel extends JFrame implements ActionListener{
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		getContentPane().setLayout(gridBagLayout);
 		
-		lblLiveMidiPlay = new JLabel("Live midi play to Notes.");
+		lblLiveMidiPlay = new JLabel("Connect a midi device to play notes on..");
 		lblLiveMidiPlay.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 30));
 		GridBagConstraints gbc_lblLiveMidiPlay = new GridBagConstraints();
 		gbc_lblLiveMidiPlay.insets = new Insets(0, 0, 5, 5);
@@ -58,7 +60,7 @@ public class DevicePanel extends JFrame implements ActionListener{
 		titelFrame = new JLabel();
 		titelFrame.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		titelFrame.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 30));
-		titelFrame.setText("Connect Midi piano device:");
+		titelFrame.setText("Choose youre device: ");
 		GridBagConstraints gbc_titelFrame = new GridBagConstraints();
 		gbc_titelFrame.anchor = GridBagConstraints.WEST;
 		gbc_titelFrame.insets = new Insets(0, 0, 5, 5);
