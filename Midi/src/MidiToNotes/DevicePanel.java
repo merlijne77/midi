@@ -23,6 +23,11 @@ import java.awt.Component;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Panel;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 
 public class DevicePanel extends JFrame implements ActionListener{
 	
@@ -32,7 +37,7 @@ public class DevicePanel extends JFrame implements ActionListener{
 	static int deviceIndex = 0;
 	JLabel titelFrame;
 	private JLabel lblLiveMidiPlay;
-	private Panel panel;
+	private JTextPane txtpnC;
 	
 	DevicePanel(MidiDevice.Info infos[]){
 		this.setTitle("Play midi piano to notes on screen!");
@@ -45,7 +50,7 @@ public class DevicePanel extends JFrame implements ActionListener{
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{324, 46, 178, 0};
 		gridBagLayout.rowHeights = new int[]{46, 0, 0, 0, 0, 0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gridBagLayout.columnWeights = new double[]{1.0, 0.0, 0.0, Double.MIN_VALUE};
 		gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 1.0, Double.MIN_VALUE};
 		getContentPane().setLayout(gridBagLayout);
 		
@@ -89,12 +94,23 @@ public class DevicePanel extends JFrame implements ActionListener{
 		gbc_connectBtn.gridy = 3;
 		getContentPane().add(connectBtn, gbc_connectBtn);
 		
-		panel = new Panel();
-		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.insets = new Insets(0, 0, 0, 5);
-		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 5;
-		getContentPane().add(panel, gbc_panel);
+		
+		
+		
+		txtpnC = new JTextPane();
+		StyledDocument doc = txtpnC.getStyledDocument();
+		SimpleAttributeSet center = new SimpleAttributeSet();
+		StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+		doc.setParagraphAttributes(0, doc.getLength(), center, false);
+		txtpnC.setFont(new Font(Font.SERIF, Font.BOLD, 99));
+		txtpnC.setText("c");
+		txtpnC.setBackground(Color.CYAN);
+		GridBagConstraints gbc_txtpnC = new GridBagConstraints();
+		gbc_txtpnC.insets = new Insets(0, 0, 0, 5);
+		gbc_txtpnC.fill = GridBagConstraints.BOTH;
+		gbc_txtpnC.gridx = 0;
+		gbc_txtpnC.gridy = 5;
+		getContentPane().add(txtpnC, gbc_txtpnC);
 		this.pack();
 		this.setVisible(true);
 	}
