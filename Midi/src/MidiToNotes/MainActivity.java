@@ -7,3 +7,4 @@ public class MainActivity {
 		MidiConnection connection = new MidiConnection();
 	
 	}
+}
