@@ -17,7 +17,7 @@ public class Note {
         this.key = key;
         this.octave = (key / 12)-1;
         int note = key % 12;
-        this.name = NOTE_NAMES[note];
+        Note.name = NOTE_NAMES[note];
    }
 
     @Override

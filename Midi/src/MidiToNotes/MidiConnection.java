@@ -8,8 +8,8 @@
 
 package MidiToNotes;
 
-import javax.sound.midi.MidiDevice.Info;
 import javax.sound.midi.*;
+import javax.sound.midi.MidiDevice.Info;
 
 
 public class MidiConnection{
@@ -39,10 +39,10 @@ public class MidiConnection{
 	 */
 	public static void connect() {
 		try {
-		for(int i=0;i<infos.length;i++){
-		    System.out.println(infos[i].getName() + " - " + infos[i].getDescription());
-		}
-		device = MidiSystem.getMidiDevice(infos[DevicePanel.getSelectedDeviceIndex()]);//mijn apparaat, laatste in de lijst.
+        	for (Info info : infos) {
+                System.out.println(info.getName() + " - " + info.getDescription());
+                    }
+		device = MidiSystem.getMidiDevice(infos[DevicePanel.getSelectedDeviceIndex()]);
 		device.open();
 		System.out.println(device.isOpen());
 		transmitter = device.getTransmitter();
